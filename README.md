@@ -97,6 +97,8 @@ dans le même genre, n'hésitez pas à les faire aussi !
   disponible [ici](https://github.com/Azecko/kata-diamond).
 * La version de [@octocat](https://github.com/octocat) a été faite en `langage`
   et est disponible [ici](https://#).
+* La version de [@Jch4ipas](https://github.com/Jch4ipas) a été faite en `C#` et est 
+  disponible [ici](https://github.com/Jch4ipas/kata-diamond).
 
 
 ## Remerciements
