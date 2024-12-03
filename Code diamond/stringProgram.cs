@@ -16,6 +16,13 @@ espace = sizeint - 1;
 int fin = 0;
 int chang = 1;
 
+if (maxChar == 'A') // Utiliser "==" pour comparer
+{
+    Console.Write("A");
+    Console.Write("\n");
+    return;
+}
+
 if (line == 1){
     for (int i = 0; i < espace; i++){
         Console.Write(" ");
