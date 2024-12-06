@@ -1,6 +1,6 @@
 using System.Threading.Tasks.Dataflow;
 
-Console.Write("Quelle est la taille de ton losange ? ");
+Console.Write("Veuillez entrez une lettre ? ");
 var sizestring = Console.ReadLine();
 if (string.IsNullOrEmpty(sizestring) || sizestring.Length > 1 || !char.IsLetter(sizestring[0]))
 {
@@ -8,11 +8,11 @@ if (string.IsNullOrEmpty(sizestring) || sizestring.Length > 1 || !char.IsLetter(
     return;
 }
 char maxChar = char.ToUpper(sizestring[0]); // Convertir en majuscule pour uniformiser
-int sizeint = maxChar - 'A' + 1; // Calculer la taille en fonction de la position de la lettre
+int sizeint = maxChar - 'A'; // Calculer la taille en fonction de la position de la lettre
 int line = 1;
 int gap = 1;
 int espace;
-espace = sizeint - 1;
+espace = sizeint;
 int fin = 0;
 int chang = 1;
 
@@ -33,13 +33,12 @@ if (line == 1){
     fin++;
     Console.Write("\n");
 }
-while (chang == 1){
-    while (line != sizeint + 1){
+for (int n = 0; n < sizeint; n++){
         for (int i = 0; i < espace; i++){
             Console.Write(" ");
         }
         espace--;
-        char currentChar = (char)('A' + line - 1); // Lettre courante
+    char currentChar = (char)('A' + line - 1);
         Console.Write(currentChar);
         for (int i = 0; i < gap; i++){
             Console.Write(" ");
@@ -50,18 +49,16 @@ while (chang == 1){
         Console.Write("\n");
     }
         chang = 2;
-}
 gap -= 4;
 line -= 2;
 espace = 1;
 
-while (chang == 2){
-    while (line != 1){
+for (int n = 0; n < sizeint - 1; n++){
         for (int i = 0; i < espace; i++){
             Console.Write(" ");
         }
         espace++;
-        char currentChar = (char)('A' + line - 1); // Lettre courante
+    char currentChar = (char)('A' + line - 1);
         Console.Write(currentChar);
 
         for (int i = 0; i < gap; i++){
@@ -72,8 +69,6 @@ while (chang == 2){
         gap -= 2;
         line--;
         Console.Write("\n");
-    }
-    chang = 3;
 }
 for (int i = 0; i < espace; i++){
         Console.Write(" ");
