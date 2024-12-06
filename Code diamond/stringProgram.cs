@@ -7,6 +7,10 @@ if (string.IsNullOrEmpty(sizestring) || sizestring.Length > 1 || !char.IsLetter(
     Console.WriteLine("Veuillez entrer une seule lettre !");
     return;
 }
+
+char character = char.Parse(sizestring); // pour savoir si lettre est majuscule ou minuscule avec la ligne de dessous
+bool letterlower = char.IsLower(character);
+
 char maxChar = char.ToUpper(sizestring[0]); // Convertir en majuscule pour uniformiser
 int sizeint = maxChar - 'A'; // Calculer la taille en fonction de la position de la lettre
 int line = 1;
@@ -16,11 +20,18 @@ espace = sizeint;
 int fin = 0;
 int chang = 1;
 
-if (maxChar == 'A') // Utiliser "==" pour comparer
+if (maxChar == 'A')
 {
+    if (letterlower){
+        Console.Write("a");
+        Console.Write("\n");
+        return;
+    }
+    else if (!letterlower) {
     Console.Write("A");
     Console.Write("\n");
     return;
+    }
 }
 
 if (line == 1){
