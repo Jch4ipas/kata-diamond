@@ -28,9 +28,9 @@ if (maxChar == 'A')
         return;
     }
     else if (!letterlower) {
-    Console.Write("A");
-    Console.Write("\n");
-    return;
+        Console.Write("A");
+        Console.Write("\n");
+        return;
     }
 }
 
@@ -39,53 +39,90 @@ if (line == 1){
         Console.Write(" ");
     }
     espace--;
-    Console.Write("A");
+    if (letterlower) {
+        Console.Write("a");
+    }
+    else if (!letterlower) {
+        Console.Write("A");
+    }
     line++;
     fin++;
     Console.Write("\n");
 }
 for (int n = 0; n < sizeint; n++){
-        for (int i = 0; i < espace; i++){
-            Console.Write(" ");
-        }
-        espace--;
-    char currentChar = (char)('A' + line - 1);
-        Console.Write(currentChar);
-        for (int i = 0; i < gap; i++){
-            Console.Write(" ");
-        }
-        Console.Write(currentChar);
-        gap = gap + 2;
-        line++;
-        Console.Write("\n");
+    for (int i = 0; i < espace; i++){
+        Console.Write(" ");
     }
-        chang = 2;
+    espace--;
+    // if (letterlower == true)
+    if (letterlower) {
+        char currentChar = (char)('a' + line - 1);
+        Console.Write(currentChar);
+    }
+    else if (!letterlower) {
+        char currentChar = (char)('A' + line - 1);
+        Console.Write(currentChar);
+    }
+    for (int i = 0; i < gap; i++){
+        Console.Write(" ");
+    }
+    if (letterlower) {
+        char currentChar = (char)('a' + line - 1);
+        Console.Write(currentChar);
+    }
+    else if (!letterlower) {
+        char currentChar = (char)('A' + line - 1);
+        Console.Write(currentChar);
+    }
+    gap = gap + 2;
+    line++;
+    Console.Write("\n");
+}
+chang = 2;
 gap -= 4;
 line -= 2;
 espace = 1;
 
 for (int n = 0; n < sizeint - 1; n++){
-        for (int i = 0; i < espace; i++){
-            Console.Write(" ");
-        }
-        espace++;
-    char currentChar = (char)('A' + line - 1);
+    for (int i = 0; i < espace; i++){
+        Console.Write(" ");
+    }
+    espace++;
+    if (letterlower) {
+        char currentChar = (char)('a' + line - 1);
         Console.Write(currentChar);
-
-        for (int i = 0; i < gap; i++){
-            Console.Write(" ");
-        }
+    }
+    else if (!letterlower) {
+        char currentChar = (char)('A' + line - 1);
         Console.Write(currentChar);
+    }
 
-        gap -= 2;
-        line--;
-        Console.Write("\n");
+    for (int i = 0; i < gap; i++){
+        Console.Write(" ");
+    }
+    if (letterlower) {
+        char currentChar = (char)('a' + line - 1);
+        Console.Write(currentChar);
+    }
+    else if (!letterlower) {
+        char currentChar = (char)('A' + line - 1);
+        Console.Write(currentChar);
+    }
+
+    gap -= 2;
+    line--;
+    Console.Write("\n");
 }
 for (int i = 0; i < espace; i++){
         Console.Write(" ");
 }
 espace--;
-Console.Write("A");
+if (letterlower) {
+        Console.Write("a");
+    }
+    else if (!letterlower) {
+        Console.Write("A");
+    }
 line++;
 fin++;
 Console.Write("\n");
